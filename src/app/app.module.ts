@@ -14,7 +14,7 @@ import { FooterComponent } from './components/partials/footer/footer.component';
 import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 import { HeaderPageComponent } from './components/partials/header-page/header-page.component';
 import { DeleteProductModalComponent } from './components/partials/modal/delete-product-modal/delete-product-modal.component';
-import { AddProductComponent } from './shop/add-product/add-product.component';
+import { AddProductComponent } from './components/shop/add-product/add-product.component';
 
 @NgModule({
   declarations: [

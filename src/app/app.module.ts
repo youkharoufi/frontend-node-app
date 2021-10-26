@@ -15,6 +15,8 @@ import { NotFoundComponent } from './components/partials/not-found/not-found.com
 import { HeaderPageComponent } from './components/partials/header-page/header-page.component';
 import { DeleteProductModalComponent } from './components/partials/modal/delete-product-modal/delete-product-modal.component';
 import { AddProductComponent } from './components/shop/add-product/add-product.component';
+import {HttpClientModule} from "@angular/common/http";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { AddProductComponent } from './components/shop/add-product/add-product.c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

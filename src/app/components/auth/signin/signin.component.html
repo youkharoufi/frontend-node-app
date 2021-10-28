@@ -1,9 +1,9 @@
 <node-header-page page="Login"></node-header-page>
-
+<mat-spinner style="margin-bottom:300px;" class="container text-center" *ngIf="loading"></mat-spinner>
 <div class="my-account pt-80 pb-80">
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12" *ngIf="!loading">
                 <h3 class="title text-capitalize mb-30 pb-25"> Log in to your account</h3>
                 <form class="log-in-form" [formGroup]="signinForm">
                     <button class="alert alert-danger alert-block" role="alert"></button>

@@ -12,6 +12,7 @@ export class SigninComponent implements OnInit {
 
   signinForm:FormGroup;
   errorMessage:string;
+  loading:boolean;
 
   constructor(private formBuilder:FormBuilder,private router:Router,private authService:AuthService) { }
 
@@ -25,8 +26,8 @@ export class SigninComponent implements OnInit {
   onSubmit():void{
     const email=this.signinForm.get("email")?.value;
     const password=this.signinForm.get("password")?.value;
-
-    this.authService.signin(email,password).then(()=>{this.router.navigate(["/shop"])}).catch((error)=>{this.errorMessage=error});
+    this.loading=true;
+    this.authService.signin(email,password).then(()=>{this.loading=false; this.router.navigate(["/shop"])}).catch((error)=>{this.loading=false; this.errorMessage=error});
   }
 
 }

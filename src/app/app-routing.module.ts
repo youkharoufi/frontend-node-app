@@ -8,16 +8,19 @@ import {SingleProductComponent} from './components/shop/single-product/single-pr
 import {EditProductComponent} from './components/shop/edit-product/edit-product.component';
 import {CartComponent} from "./components/shop/cart/cart.component";
 import {NotFoundComponent} from './components/partials/not-found/not-found.component';
-
+import {HomeComponent} from './components/home/home.component';
+import {GuardGuard} from "./services/guard.guard";
 
 const routes: Routes = [
+  {path:'',component:HomeComponent},
   {path:'signup',component:SignupComponent},
   {path:"signin",component:SigninComponent},
   {path:"shop",component:ShopComponent},
-  {path:"add-product",component:AddProductComponent},
+  {path:"add-product",component:AddProductComponent, canActivate :[GuardGuard]},
   {path:"single-product/:id",component:SingleProductComponent},
-  {path:"edit-product/:id",component:EditProductComponent},
+  {path:"edit-product/:id",component:EditProductComponent, canActivate:[GuardGuard]},
   {path:"cart",component:CartComponent},
+  {path:"not-found",component:NotFoundComponent},
   {path:'**',component:NotFoundComponent}
 ];
 

@@ -3,6 +3,7 @@ import {ProductService} from "../../services/product.service";
 import {Product} from "../../models/product";
 import {Subscription} from "rxjs";
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'node-shop',
@@ -16,9 +17,11 @@ export class ShopComponent implements OnInit,OnDestroy {
   userId;
   loading:boolean;
 
-  constructor(private productService:ProductService) { }
+  constructor(private productService:ProductService,private authService:AuthService) { }
 
   ngOnInit(): void {
+    this.userId=this.authService.userId;
+    window.scrollTo(0,0);
     this.productSub=this.productService.product$.subscribe(
       (products:Product[])=>{
         this.loading=true;

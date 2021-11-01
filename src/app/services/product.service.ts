@@ -37,8 +37,8 @@ export class ProductService {
   }
 
   getProductById(id:string){
-    return new Promise((resolve,reject)=>{
-        this.httpClient.get<Data>(this.api+"/products"+id).subscribe(
+    return new Promise<any>((resolve,reject)=>{
+        this.httpClient.get<Data>(this.api+"/products/"+id).subscribe(
           (data:Data)=>{
             if(data.status===200){
               resolve(data.result);
@@ -59,9 +59,9 @@ export class ProductService {
       productData.append('product',JSON.stringify(product));
       productData.append('image',image);
 
-      this.httpClient.post<Data>(this.api+"/products/",productData).subscribe(
+      this.httpClient.post<Data>(this.api+"/products",productData).subscribe(
         (data:Data)=>{
-          if(data.status===201){
+          if(data.status===200){
             this.getProducts();
             resolve(data);
         }else{

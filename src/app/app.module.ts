@@ -20,6 +20,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     NotFoundComponent,
     HeaderPageComponent,
     DeleteProductModalComponent,
-    AddProductComponent
+    AddProductComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
